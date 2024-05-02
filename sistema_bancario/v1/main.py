@@ -1,4 +1,4 @@
-from sistema_bancario.conta_bancaria import ContaBancaria
+from conta_bancaria import ContaBancaria
 
 menu = """
 
