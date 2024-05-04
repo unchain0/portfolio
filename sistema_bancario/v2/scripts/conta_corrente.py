@@ -31,13 +31,13 @@ class ContaCorrente(ContaBancaria):
     @classmethod
     def __validar_numero_conta(cls, numero: int) -> None:
         if not isinstance(numero, int):
-            raise TypeError(f"O número da conta '{numero}' é inválido.")
+            raise TypeError(f"O número da conta {numero!r} é inválido.")
         for conta in cls.lista_contas:
             if conta.numero_conta == numero:
-                raise err.DuplicateError(f"O número da conta '{conta.numero_conta}' já existe na lista de contas.")
+                raise err.DuplicateError(f"O número da conta {conta.numero_conta!r} já existe na lista de contas.")
 
     @classmethod
     def __validar_usuario(cls, user: Usuario) -> None:
         for conta in cls.lista_contas:
             if conta.usuario == user:
-                raise err.DuplicateError(f"O usuário '{user.nome}' já existe na lista de contas.")
+                raise err.DuplicateError(f"O usuário {user.nome!r} já existe na lista de contas.")

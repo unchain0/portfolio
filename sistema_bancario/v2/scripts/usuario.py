@@ -70,10 +70,10 @@ class Usuario:
             raise err.LenError("CPF inválido: deve conter exatamente 11 dígitos.")
         for usr in cls.lista_usuarios:
             if usr.cpf == cpf:
-                raise err.DuplicateError(f"O CPF '{cpf}' já existe na lista de usuários.")
+                raise err.DuplicateError(f"O CPF {cpf!r} já existe na lista de usuários.")
 
     @classmethod
     def validar_conta_bancaria(cls, user: 'Usuario', conta_bancaria: ContaBancaria) -> None:
         for user in cls.lista_usuarios:
             if conta_bancaria in user.conta:
-                raise err.DuplicateError(f"A conta de 'id {conta_bancaria.id}' já existe neste usuário.")
+                raise err.DuplicateError(f"A conta de id {conta_bancaria.id!r} já existe neste usuário.")
