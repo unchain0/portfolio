@@ -51,7 +51,7 @@ class ContaBancaria(ABC):
     def _atualizar_saldo(self, valor) -> None:
         self.saldo += valor
 
-    def _atualizar_extrato(self, operacao: Literal["Depósito", "Saque"], valor: float, cor: Fore) -> None:
+    def _atualizar_extrato(self, operacao: Literal["Depósito", "Saque"], valor: float, cor: str) -> None:
         self.__extrato += f"{cor}{operacao}: R$ {valor:.2f}{Style.RESET_ALL}\n"
 
     def imprimir_extrato(self) -> None:
