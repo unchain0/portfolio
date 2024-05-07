@@ -8,7 +8,7 @@ class Customer(NaturalPerson, ABC):
     def __init__(self, cpf, name, birth_date, address: str):
         super().__init__(cpf, name, birth_date)
         self.__address = address
-        self.__accounts: list["Account"] = []
+        self.__accounts: list = []
 
     @property
     def address(self):
@@ -19,8 +19,8 @@ class Customer(NaturalPerson, ABC):
         return self.__accounts
 
     @staticmethod
-    def perform_transaction(account: "Account", transaction: Transaction) -> None:
+    def perform_transaction(account, transaction: Transaction) -> None:
         transaction.register(account)
 
-    def add_account(self, account: "Account") -> None:
+    def add_account(self, account) -> None:
         self.accounts.append(account)

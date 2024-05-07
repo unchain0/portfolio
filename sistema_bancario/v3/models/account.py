@@ -1,11 +1,13 @@
 from abc import ABC
 
+from .customer import Customer
 from .historic import Historic
 from .transaction import Withdraw, Deposit
 
 
 class Account(ABC):
-    def __init__(self, number: int, customer: "Customer"):
+
+    def __init__(self, number: int, customer: Customer):
         self.__number = number
         self.__customer = customer
         self.__balance: float = 0

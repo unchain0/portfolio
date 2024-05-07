@@ -15,14 +15,14 @@ class Transaction(ABC):
 
 
 class Withdraw(Transaction):
-    def register(self, account: "Account") -> None:
+    def register(self, account) -> None:
         valid_transaction = account.withdraw(self.amount)
         if valid_transaction:
             account.historic.add_transaction(self)
 
 
 class Deposit(Transaction):
-    def register(self, account: "Account") -> None:
+    def register(self, account) -> None:
         valid_transaction = account.deposit(self.amount)
         if valid_transaction:
             account.historic.add_transaction(self)
