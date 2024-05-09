@@ -1,5 +1,4 @@
 from datetime import date
-from time import sleep
 
 from faker import Faker
 
@@ -45,5 +44,4 @@ while True:
         print(f"@@@ Operation failed! {e} @@@")
     except KeyboardInterrupt:
         print("\n=== Leaving ===")
-        sleep(1.5)
         break
