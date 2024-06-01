@@ -1,19 +1,19 @@
 from datetime import date
 
-from faker import Faker
-
 from models.checking_account import CheckingAccount
 from models.customer import Customer
 from models.exceptions import InvalidOptionError
 
-fake = Faker()
 customer = Customer(
-    cpf="12345678901",
-    name=fake.name(),
+    cpf="123.456.789-00",
+    name="John Doe",
     birth_date=date(2000, 1, 1),
-    address=fake.address(),
+    address="123 Main St",
 )
-account = CheckingAccount(1, customer)
+account = CheckingAccount(
+    number=1,
+    customer=customer,
+)
 menu = """
 [d] Deposit
 [w] Withdraw
