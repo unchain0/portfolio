@@ -1,8 +1,8 @@
 from datetime import date
 
-from models.checking_account import CheckingAccount
-from models.customer import Customer
-from models.exceptions import InvalidOptionError
+from scripts.checking_account import CheckingAccount
+from scripts.customer import Customer
+from sistema_bancario.v3.exceptions import InvalidOptionError
 
 customer = Customer(
     cpf="123.456.789-00",
